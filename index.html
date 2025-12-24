@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,6 @@
 body{
   height:100vh;
   font-family:'Poppins',sans-serif;
-  /* New Color Palette: Deep Teal and Midnight */
   background: radial-gradient(circle at top, #1a3c40, #06283d, #04121a);
   overflow:hidden;
   color:white;
@@ -23,7 +23,7 @@ body{
   text-align:center;
 }
 
-/* Aurora Effect - Teal/Gold */
+/* Aurora Effect */
 body::before{
   content:"";
   position:fixed;
@@ -56,58 +56,73 @@ body::before{
 .container{
   z-index:5;
   padding:20px;
+  width: 90%;
+  max-width: 600px; /* Limits width on desktop */
   animation:fadeUp 2s ease;
 }
 
 h1{
-  font-size:2.6rem;
-  color: #ffd700; /* Golden text */
+  font-size: 2.2rem; /* Adjusted for mobile */
+  color: #ffd700;
   text-shadow:0 0 20px rgba(255,215,0,0.5);
+  line-height: 1.2;
 }
 
 .countdown{
   margin-top:15px;
-  font-size:1.1rem;
+  font-size:1rem;
   font-weight: 300;
   background: rgba(255,255,255,0.1);
-  padding: 5px 15px;
+  padding: 8px 15px;
   border-radius: 20px;
   display: inline-block;
 }
 
 .message{
-  margin-top:25px;
-  font-size:1.2rem;
-  line-height:1.6;
+  margin-top:20px;
+  font-size:1.1rem;
+  line-height:1.5;
   color: #e0f7fa;
 }
 
+/* Cake Image Styling */
+.cake-container{
+  margin-top: 25px;
+}
+
+.cake-container img {
+  width: 180px; /* Mobile size */
+  height: 180px;
+  object-fit: cover;
+  border: 4px solid #ffd700;
+  border-radius: 50%; /* Circular cake view */
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.cake-container img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
 .emoji{
-  font-size:3rem;
-  margin:20px 0;
+  font-size:2rem;
+  margin:15px 0;
 }
 
 button{
-  margin-top:25px;
-  padding:14px 34px;
+  margin-top:10px;
+  padding: 12px 28px;
   border:none;
   border-radius:30px;
   font-weight:600;
   cursor:pointer;
-  background: #ffd700; /* Gold Button */
+  background: #ffd700;
   color: #04121a;
   box-shadow:0 10px 20px rgba(0,0,0,.4);
   transition: 0.3s;
 }
 
 button:hover{transform:scale(1.05); background: #fff;}
-
-.slideshow img{
-  width:200px;
-  border: 3px solid rgba(255,215,0,0.3);
-  border-radius:15px;
-  box-shadow:0 15px 35px rgba(0,0,0,.5);
-}
 
 /* Background Video Overlay */
 iframe{
@@ -125,8 +140,17 @@ footer{
   bottom:12px;
   width:100%;
   opacity:.6;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   letter-spacing: 1px;
+}
+
+/* DESKTOP VIEW ADJUSTMENTS */
+@media (min-width: 768px) {
+  h1 { font-size: 3.5rem; }
+  .message { font-size: 1.3rem; }
+  .cake-container img { width: 250px; height: 250px; }
+  .countdown { font-size: 1.2rem; }
+  footer { font-size: 0.9rem; }
 }
 
 @keyframes fadeUp{
@@ -163,8 +187,8 @@ for(let i=0;i<50;i++){
         filled with joy and endless magic ✨
     </div>
 
-    <div class="slideshow" style="margin-top: 25px;">
-        <img src="https://picsum.photos/400/400?random=2" alt="Celebration">
+    <div class="cake-container">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Birthday Cake">
     </div>
 
     <div class="emoji">🌟 🎂 🎈</div>
@@ -206,7 +230,6 @@ function confetti(){
   c.style.height="7px";
   c.style.borderRadius="2px";
   c.style.zIndex="10";
-  /* Gold and White Confetti */
   const colors = ['#ffd700', '#ffffff', '#00ffff', '#fff'];
   c.style.background=colors[Math.floor(Math.random()*colors.length)];
   c.style.animation="float 4s linear forwards";
