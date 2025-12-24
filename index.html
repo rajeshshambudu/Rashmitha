@@ -1,193 +1,193 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Advance Happy Birthday Rashmitha (minni) ✨</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Advance Happy Birthday Rashmitha (minni) ✨</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-    --gold: #ffd700;
-    --teal-dark: #06283d;
-    --glass: rgba(255, 255, 255, 0.08);
-}
+    <style>
+        :root {
+            --gold: #ffd700;
+            --teal-dark: #06283d;
+            --glass: rgba(255, 255, 255, 0.08);
+        }
 
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        /* Prevent scrolling and handle mobile height correctly */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Fixes mobile bounce/scroll */
+        }
 
-body {
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    background: #04121a;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    perspective: 1000px;
-}
+        body {
+            min-height: 100vh;
+            min-height: 100svh; /* Modern mobile viewport unit */
+            font-family: 'Poppins', sans-serif;
+            background: #04121a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            padding: 20px;
+        }
 
-/* Enhanced Background Layer */
-.background-canvas {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at top, #1a3c40, #06283d, #04121a);
-    z-index: -2;
-}
+        /* Enhanced Background Layer */
+        .background-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at top, #1a3c40, #06283d, #04121a);
+            z-index: -2;
+        }
 
-iframe {
-    position: fixed;
-    top: 50%; left: 50%;
-    width: 350vw; height: 350vh;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    opacity: 0.18;
-    pointer-events: none;
-}
+        /* Responsive Background Video */
+        #ytplayer {
+            position: fixed;
+            top: 50%; left: 50%;
+            width: 100vw; 
+            height: 56.25vw; /* 16:9 ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 ratio */
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0.25;
+            pointer-events: none;
+            filter: grayscale(30%) contrast(120%);
+        }
 
-/* Twinkling Star System */
-.star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    filter: blur(0.5px);
-    z-index: 0;
-}
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-/* Glassmorphism Card with Shimmer */
-.glass-card {
-    position: relative;
-    z-index: 10;
-    width: 88%;
-    max-width: 440px;
-    padding: 35px 25px;
-    background: var(--glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 40px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-    animation: floatingCard 6s ease-in-out infinite;
-    text-align: center;
-    overflow: hidden;
-}
+        /* Glassmorphism Card */
+        .glass-card {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 25px;
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 35px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: floatingCard 6s ease-in-out infinite;
+            text-align: center;
+        }
 
-/* Shimmer Sweep Effect */
-.glass-card::after {
-    content: "";
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
-    transform: rotate(45deg);
-    animation: shimmer 8s infinite;
-}
+        @keyframes floatingCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
 
-@keyframes shimmer {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
-}
+        h2 {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+        }
 
-@keyframes floatingCard {
-    0%, 100% { transform: translateY(0) rotateX(2deg); }
-    50% { transform: translateY(-15px) rotateX(-2deg); }
-}
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.2rem, 10vw, 3.2rem);
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
 
-h2 {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 5px;
-}
+        .countdown {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(0, 255, 255, 0.08);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #e0f7fa;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
 
-h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(2rem, 9vw, 3rem);
-    color: var(--gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    margin-bottom: 12px;
-}
+        .cake-wrapper {
+            position: relative;
+            width: clamp(140px, 40vw, 200px);
+            height: clamp(140px, 40vw, 200px);
+            margin: 0 auto 25px;
+        }
 
-.countdown {
-    display: inline-block;
-    padding: 8px 18px;
-    background: rgba(0, 255, 255, 0.05);
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #e0f7fa;
-    margin-bottom: 25px;
-}
+        .cake-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            padding: 6px;
+            animation: pulseGlow 4s infinite;
+        }
 
-.cake-wrapper {
-    position: relative;
-    width: 170px;
-    height: 170px;
-    margin: 0 auto 20px;
-}
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.5); }
+        }
 
-.cake-wrapper img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--gold);
-    padding: 6px;
-    animation: pulseGlow 4s infinite;
-}
+        .message {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
 
-@keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); transform: scale(1); }
-    50% { box-shadow: 0 0 35px rgba(255, 215, 0, 0.6); transform: scale(1.03); }
-}
+        button {
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            color: #04121a;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 280px;
+            font-size: 0.9rem;
+        }
 
-.message {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    font-weight: 300;
-    color: #f0f0f0;
-}
+        button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4); }
+        button:active { transform: scale(0.95); }
 
-button {
-    background: linear-gradient(135deg, #ffd700, #ffb800);
-    color: #04121a;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.25);
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 260px;
-}
+        footer {
+            position: fixed;
+            bottom: 20px;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+        }
 
-button:active { transform: scale(0.96); box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2); }
-
-footer {
-    position: fixed;
-    bottom: 20px;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    opacity: 0.4;
-    text-transform: uppercase;
-}
-
-/* Responsive Desktop Tweaks */
-@media (min-width: 768px) {
-    .glass-card { padding: 50px 40px; max-width: 500px; }
-    .cake-wrapper { width: 220px; height: 220px; }
-    h1 { font-size: 3.8rem; }
-    .message { font-size: 1.1rem; }
-    .countdown { font-size: 1rem; }
-}
-</style>
+        /* Tablet/Desktop View Adjustments */
+        @media (min-width: 768px) {
+            .glass-card { padding: 60px 45px; max-width: 480px; }
+            h1 { font-size: 3.8rem; }
+            .message { font-size: 1.15rem; }
+            .countdown { font-size: 0.95rem; }
+        }
+    </style>
 </head>
 
 <body>
@@ -195,17 +195,17 @@ footer {
 <div class="background-canvas"></div>
 
 <iframe id="ytplayer"
-src="https://www.youtube.com/embed/nAw2ooeubSQ?autoplay=1&mute=1&loop=1&playlist=nAw2ooeubSQ&controls=0"
+src="https://www.youtube.com/embed/nAw2ooeubSQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=nAw2ooeubSQ&controls=0&modestbranding=1&rel=0"
 allow="autoplay"></iframe>
 
 <div class="glass-card">
     <h2>Advance</h2>
     <h1>Happy Birthday</h1>
     
-    <div class="countdown" id="countdown">Preparing the magic...</div>
+    <div class="countdown" id="countdown">Calculating...</div>
 
     <div class="cake-wrapper">
-        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=400" alt="Delicious Birthday Cake">
+        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=400" alt="Cake">
     </div>
 
     <p class="message">
@@ -220,76 +220,80 @@ allow="autoplay"></iframe>
 <footer>Stay Shining, Rashmitha ✨</footer>
 
 <script>
-// Dynamic Dreamy Starfield
-const starCount = 70;
-for(let i=0; i<starCount; i++) {
-    let s = document.createElement("div");
-    s.className = "star";
-    let size = (Math.random() * 2 + 1) + "px";
-    s.style.width = size;
-    s.style.height = size;
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.top = Math.random() * 100 + "vh";
-    s.style.opacity = Math.random();
-    
-    s.animate([
-        { opacity: 0.1, transform: 'scale(0.8)' }, 
-        { opacity: 1, transform: 'scale(1.2)' }, 
-        { opacity: 0.1, transform: 'scale(0.8)' }
-    ], {
-        duration: 2500 + Math.random() * 3000,
-        iterations: Infinity
-    });
-    document.body.appendChild(s);
+// Improved Starfield Generation
+function createStars() {
+    const starCount = window.innerWidth < 768 ? 50 : 100;
+    for(let i=0; i<starCount; i++) {
+        let s = document.createElement("div");
+        s.className = "star";
+        let size = (Math.random() * 2 + 1) + "px";
+        s.style.width = size;
+        s.style.height = size;
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.top = Math.random() * 100 + "vh";
+        s.style.opacity = Math.random();
+        
+        s.animate([
+            { opacity: 0.1 }, { opacity: 1 }, { opacity: 0.1 }
+        ], {
+            duration: 2000 + Math.random() * 3000,
+            iterations: Infinity
+        });
+        document.body.appendChild(s);
+    }
 }
+createStars();
 
 function unmute(){
     let i = document.getElementById("ytplayer");
     let currentSrc = i.src;
-    if(currentSrc.includes("&mute=1")){
-        i.src = currentSrc.replace("&mute=1", "&mute=0");
+    if(currentSrc.includes("mute=1")){
+        i.src = currentSrc.replace("mute=1", "mute=0");
     }
 }
 
-// Countdown Logic for Dec 26
-const target = new Date("December 26, " + new Date().getFullYear() + " 00:00:00").getTime();
-setInterval(() => {
-    let now = new Date().getTime();
-    let d = target - now;
+// Countdown Logic
+const targetDate = new Date("December 26, 2025 00:00:00").getTime();
+
+const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
     
-    if(d < 0) {
+    if(diff < 0) {
         document.getElementById("countdown").innerText = "THE CELEBRATION IS HERE! 🎉";
+        clearInterval(timer);
         return;
     }
     
-    let h = Math.floor(d / (1000 * 60 * 60));
-    let m = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
-    let s = Math.floor((d % (1000 * 60)) / 1000);
+    const h = Math.floor(diff / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
     
     document.getElementById("countdown").innerText = `⌛ ${h}h ${m}m ${s}s UNTIL THE BIG DAY`;
 }, 1000);
 
-// Optimized Confetti
+// High-Performance Confetti
 function confetti() {
     const colors = ['#ffd700', '#00ffff', '#ffffff', '#ff69b4', '#70d6ff'];
-    for(let i=0; i<100; i++) {
+    for(let i=0; i<80; i++) {
         let c = document.createElement("div");
         c.style.position = "fixed";
         c.style.left = Math.random() * 100 + "vw";
-        c.style.top = "-10vh";
-        c.style.width = (Math.random() * 6 + 4) + "px";
+        c.style.top = "-5vh";
+        c.style.width = (Math.random() * 7 + 4) + "px";
         c.style.height = c.style.width;
         c.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
         c.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
         c.style.zIndex = "100";
+        c.style.pointerEvents = "none";
         document.body.appendChild(c);
         
         let animation = c.animate([
             { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-            { transform: `translateY(110vh) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+            { transform: `translateY(105vh) translateX(${Math.random() * 200 - 100}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
         ], {
-            duration: 3000 + Math.random() * 2000,
-            easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            duration: 2000 + Math.random() * 2000,
+            easing: 'bezier-curve(0.25, 0.1, 0.25, 1)'
         });
         
         animation.onfinish = () => c.remove();
