@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,40 +14,30 @@
 body{
   height:100vh;
   font-family:'Poppins',sans-serif;
-  background:radial-gradient(circle at top,#9aa7ff,#6b5fd3,#2b1b5a);
+  background:radial-gradient(circle at top,#9aa7ff,#5e54c7,#1b103a);
   overflow:hidden;
   color:white;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
+  transition:transform 6s ease;
 }
 
-/* Aurora */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background:linear-gradient(120deg,rgba(255,255,255,0.08),rgba(138,43,226,0.2),rgba(0,255,255,0.15));
-  animation:aurora 15s linear infinite;
+/* 🌌 Galaxy zoom */
+.galaxy-zoom{
+  transform:scale(1.35);
 }
 
-@keyframes aurora{
-  0%{transform:rotate(0deg)}
-  100%{transform:rotate(360deg)}
-}
-
-/* Stars */
+/* ✨ Stars */
 .star{
   position:absolute;
-  width:5px;height:5px;
+  width:4px;height:4px;
   background:white;
   border-radius:50%;
   opacity:.7;
   animation:float linear infinite;
 }
-
 @keyframes float{
   from{transform:translateY(100vh)}
   to{transform:translateY(-10vh)}
@@ -56,15 +47,31 @@ body::before{
 .container{
   z-index:5;
   padding:20px;
-  animation:fadeUp 2s ease;
 }
 
 h1{
   font-size:3.2rem;
-  text-shadow:0 0 30px rgba(255,255,255,.7);
+  text-shadow:0 0 30px rgba(255,255,255,.8);
 }
 
-.countdown{
+/* Hidden before midnight */
+.hidden{
+  opacity:0;
+  transform:scale(.6);
+  filter:blur(10px);
+}
+
+.reveal{
+  animation:reveal 3s ease forwards;
+}
+
+@keyframes reveal{
+  0%{opacity:0;transform:scale(.5);filter:blur(12px)}
+  60%{opacity:1;transform:scale(1.15);filter:blur(0)}
+  100%{opacity:1;transform:scale(1)}
+}
+
+#clock,#countdown{
   margin-top:10px;
   font-size:1.2rem;
   opacity:.9;
@@ -76,32 +83,85 @@ h1{
   line-height:1.7;
 }
 
-.lyrics{
-  margin-top:20px;
-  font-size:1.1rem;
-  opacity:0;
-  animation:lyrics 6s infinite;
-}
-
-@keyframes lyrics{
-  0%{opacity:0}
-  20%{opacity:1}
-  80%{opacity:1}
-  100%{opacity:0}
-}
-
 .emoji{
-  font-size:3.5rem;
+  font-size:3rem;
   margin:20px 0;
 }
 
-.pulse{
-  animation:pulse 1.2s infinite;
+/* 🕯 Cake */
+.cake{
+  position:relative;
+  width:120px;
+  height:80px;
+  background:#ffb6c1;
+  border-radius:10px;
+  margin:30px auto;
+}
+.cake::after{
+  content:"";
+  position:absolute;
+  bottom:-20px;
+  left:0;
+  width:120px;
+  height:20px;
+  background:#ff8fab;
+  border-radius:0 0 10px 10px;
+}
+.candle{
+  position:absolute;
+  top:-40px;
+  left:50%;
+  transform:translateX(-50%);
+  width:8px;
+  height:40px;
+  background:white;
+}
+.flame{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:14px;
+  height:18px;
+  background:radial-gradient(circle,#fff700,#ff8c00,#ff4500);
+  border-radius:50%;
+  animation:flicker .15s infinite;
+}
+@keyframes flicker{
+  0%{transform:translateX(-50%) scale(1)}
+  50%{transform:translateX(-50%) scale(1.1)}
+  100%{transform:translateX(-50%) scale(1)}
 }
 
-@keyframes pulse{
+/* 🌙 Moon */
+#moon{
+  position:fixed;
+  bottom:-200px;
+  right:8%;
+  width:120px;height:120px;
+  background:radial-gradient(circle,#fff,#ddd);
+  border-radius:50%;
+  box-shadow:0 0 40px rgba(255,255,255,.8);
+  transition:bottom 4s ease-out;
+  z-index:4;
+}
+.moon-rise{bottom:60%}
+
+/* 🎆 Fireworks text */
+#fireworks{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:6;
+}
+
+/* 🎵 Beat pulse */
+.beat{
+  animation:beat .6s infinite;
+}
+@keyframes beat{
   0%{transform:scale(1)}
-  50%{transform:scale(1.08)}
+  50%{transform:scale(1.12)}
   100%{transform:scale(1)}
 }
 
@@ -114,30 +174,8 @@ button{
   cursor:pointer;
   background:white;
   color:#5a4db2;
-  box-shadow:0 15px 30px rgba(0,0,0,.3);
 }
 
-button:hover{transform:scale(1.1)}
-
-/* Slideshow */
-.slideshow{
-  margin-top:20px;
-}
-
-.slideshow img{
-  width:220px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-  animation:slide 12s infinite;
-}
-
-@keyframes slide{
-  0%,100%{opacity:1}
-  33%{opacity:0}
-  66%{opacity:1}
-}
-
-/* YouTube */
 iframe{
   position:fixed;
   top:50%;left:50%;
@@ -147,7 +185,6 @@ iframe{
   pointer-events:none;
   opacity:.12;
 }
-
 footer{
   position:fixed;
   bottom:12px;
@@ -155,24 +192,22 @@ footer{
   text-align:center;
   opacity:.7;
 }
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(50px)}
-  to{opacity:1;transform:translateY(0)}
-}
 </style>
 </head>
 
 <body>
 
-<!-- YouTube Music -->
+<!-- 🎶 YouTube Music -->
 <iframe id="ytplayer"
 src="https://www.youtube.com/embed/nAw2ooeubSQ?autoplay=1&mute=1&loop=1&playlist=nAw2ooeubSQ&controls=0"
 allow="autoplay"></iframe>
 
+<canvas id="fireworks"></canvas>
+<div id="moon"></div>
+
 <!-- Stars -->
 <script>
-for(let i=0;i<45;i++){
+for(let i=0;i<50;i++){
  let s=document.createElement("div");
  s.className="star";
  s.style.left=Math.random()*100+"vw";
@@ -181,46 +216,62 @@ for(let i=0;i<45;i++){
 }
 </script>
 
-<div class="container pulse">
-<h1>Happy Birthday Rashmitha ✨</h1>
-<div class="countdown" id="countdown"></div>
+<div class="container" id="container">
+<h1 id="name" class="hidden">Happy Birthday Rashmitha ✨</h1>
+
+<div id="clock"></div>
+<div id="countdown"></div>
 
 <div class="message">
-May your dreams glow like stars,<br>
-your heart stay light and peaceful 💜
+May your dreams glow like galaxies<br>
+and your heart stay peaceful 💜
 </div>
 
-<div class="lyrics">✨ Some moments are meant to shine forever ✨</div>
-
-<div class="slideshow">
-<img src="https://picsum.photos/300/300?random=1">
+<div class="cake">
+  <div class="candle">
+    <div class="flame"></div>
+  </div>
 </div>
 
-<div class="emoji">🎂🎁🎈</div>
+<div class="emoji">🎂🎈</div>
 
-<button onclick="unmute();confetti()">🔊 Unmute Music</button>
+<button onclick="unmute()">🔊 Unmute Music</button>
 </div>
 
 <footer>Made with 💜 for Rashmitha</footer>
 
 <script>
-function unmute(){
- let i=document.getElementById("ytplayer");
- i.src=i.src.replace("&mute=1","&mute=0");
-}
+/* Clock */
+setInterval(()=>{
+ document.getElementById("clock").innerText=
+ "🕰 "+new Date().toLocaleTimeString();
+},1000);
 
 /* Countdown */
-const target=new Date("December 26, "+new Date().getFullYear()+" 00:00:00").getTime();
+const midnight=new Date("December 26, "+new Date().getFullYear()+" 00:00:00").getTime();
 setInterval(()=>{
- let now=new Date().getTime();
- let d=target-now;
+ let now=Date.now();
+ let d=midnight-now;
  if(d<0)return;
- let h=Math.floor(d/(1000*60*60));
- let m=Math.floor((d%(1000*60*60))/(1000*60));
- let s=Math.floor((d%(1000*60))/1000);
+ let h=Math.floor(d/3600000);
+ let m=Math.floor(d%3600000/60000);
+ let s=Math.floor(d%60000/1000);
  document.getElementById("countdown").innerText=
- `⏳ Countdown: ${h}h ${m}m ${s}s`;
+ `⏳ ${h}h ${m}m ${s}s`;
 },1000);
+
+/* Fireworks text */
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;canvas.height=innerHeight;
+function fireworkText(t){
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ ctx.font="bold 80px Poppins";
+ ctx.fillStyle="white";
+ ctx.textAlign="center";
+ ctx.fillText(t,canvas.width/2,canvas.height/2);
+ setTimeout(()=>ctx.clearRect(0,0,canvas.width,canvas.height),2500);
+}
 
 /* Confetti */
 function confetti(){
@@ -236,6 +287,26 @@ function confetti(){
   document.body.appendChild(c);
   setTimeout(()=>c.remove(),3000);
  }
+}
+
+/* Midnight trigger */
+let done=false;
+setInterval(()=>{
+ if(Date.now()>=midnight && !done){
+  done=true;
+  document.getElementById("name").classList.add("reveal");
+  document.getElementById("moon").classList.add("moon-rise");
+  document.body.classList.add("galaxy-zoom");
+  document.getElementById("container").classList.add("beat");
+  fireworkText("RASHMITHA ✨");
+  confetti();
+ }
+},1000);
+
+/* Unmute */
+function unmute(){
+ let i=document.getElementById("ytplayer");
+ i.src=i.src.replace("&mute=1","&mute=0");
 }
 </script>
 
